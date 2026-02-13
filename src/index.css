@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    /* Deep black base as seen in your first successful UI */
+    @apply bg-[#050505] text-white antialiased;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .grid-bg {
+    /* This fixed grid is what gave your first UI the "technical" look */
+    background-color: #050505;
+    background-image: 
+      linear-gradient(to right, #121212 1px, transparent 1px),
+      linear-gradient(to bottom, #121212 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-attachment: fixed; 
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .content-box {
+    /* Large rounded corners from your "About Me" screenshot */
+    @apply bg-[#0a0a0a] border border-white/5 rounded-[3rem] p-12 md:p-24 shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 45s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

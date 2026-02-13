@@ -1,0 +1,123 @@
+/* 1. RESET & GLOBAL STYLES */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  background-color: #050505; /* Deep black theme */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal shifts on mobile */
+  scroll-behavior: smooth;
+  background-color: #050505;
+}
+
+/* 2. NAVBAR CLEARANCE 
+   Ensures content starts below your fixed navbar rather than behind it.
+*/
+body {
+  padding-top: 80px; 
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. RESPONSIVE GRID BACKGROUND */
+.grid-bg {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  /* 40px grid for mobile phones to prevent visual clutter */
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+
+@media (min-width: 768px) {
+  .grid-bg {
+    /* 80px larger, cleaner grid for laptops */
+    background-size: 80px 80px;
+  }
+}
+
+/* 4. CONTENT BOX STYLING */
+.content-box {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 5. RESPONSIVE TYPOGRAPHY & OVERLAP PREVENTION */
+section {
+  width: 100%;
+  /* Limits content width on ultra-wide laptops to fit standard "sides" */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem !important; /* Forces large headers to fit phone width */
+    line-height: 1.1;
+  }
+  
+  .py-40 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  
+  body {
+    padding-top: 70px; /* Slightly smaller gap for mobile nav */
+  }
+}
+
+/* 6. MARQUEE ANIMATION - Performance Optimized */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  /* Using will-change tells the browser to use the GPU, removing lag */
+  will-change: transform; 
+}
+
+.pause-on-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* 7. CUSTOM SCROLLBAR for a premium look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
