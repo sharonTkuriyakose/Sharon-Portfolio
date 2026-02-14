@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+/* 1. IMPORT METHOD: This ensures Vite correctly maps the image path during hosting */
+import profileImg from '../assets/profile.jpeg'; 
 
 const skillIcons = [
   { name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
@@ -26,7 +28,8 @@ export default function Home() {
             className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[5px] border-blue-600/50 overflow-hidden mb-6 shadow-[0_0_40px_rgba(37,99,235,0.15)]"
           >
             <img 
-              src="/profile.jpeg" 
+              /* 2. DYNAMIC SRC: Uses the imported variable instead of a string path */
+              src={profileImg} 
               alt="Sharon T Kuriyakose"
               className="w-full h-full object-cover object-top scale-110" 
             />
@@ -83,7 +86,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. ABOUT ME SECTION - LANGUAGES IN WHITE */}
+      {/* 3. ABOUT ME SECTION */}
       <section id="about" className="py-20 md:py-28 px-6 flex items-center justify-center">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -108,10 +111,8 @@ export default function Home() {
             
             <p>
               I also enjoy programming in <span className="text-white font-bold">Java</span> and <span className="text-white font-bold">Python</span>, 
-              which I often utilize to build efficient automation tools and data-driven systems,
-             or solving 
-              complex technical problems, I am driven by the challenge of turning ideas into clean, functional code. 
-              I am constantly learning and evolving, aiming to build technology that is not only robust but also makes a meaningful impact.
+              which I often utilize to build efficient automation tools and data-driven systems. Driven by the challenge of 
+              turning ideas into clean, functional code, I am constantly learning and evolving to build technology that makes a meaningful impact.
             </p>
           </div>
         </motion.div>
