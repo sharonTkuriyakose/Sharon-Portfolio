@@ -14,33 +14,30 @@ export default function Contact() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        /* MAX-WIDTH: Reduced to 3xl (768px) to match the centered, balanced design */
         className="bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 md:p-16 max-w-3xl w-full shadow-2xl text-center relative overflow-hidden"
       >
-        {/* Subtle background glow */}
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600/5 rounded-full blur-[80px]" />
 
-        {/* HEADING: Scaled down from 7xl to 5xl for a professional laptop look */}
         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 uppercase tracking-tighter">
           Contact Me
         </h2>
 
-        <div className="space-y-5 mb-10">
-          {/* PHONE: Downscaled text sizes */}
-          <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-slate-300 font-light">
-            <Phone className="text-blue-500 w-5 h-5 md:w-6 md:h-6" />
+        <div className="space-y-6 mb-10">
+          {/* PHONE: Unified width and stroke thickness */}
+          <div className="flex items-center justify-center gap-4 text-lg md:text-xl text-slate-300 font-light">
+            <Phone className="text-blue-500 w-6 h-6 md:w-7 md:h-7 min-w-[24px] stroke-[2.5]" />
             <p>Phone: <a href="tel:6238405728" className="text-white font-medium hover:text-blue-400 transition-colors">6238405728</a></p>
           </div>
 
-          {/* WHATSAPP */}
-          <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-slate-300 font-light">
-            <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 md:w-6 md:h-6" />
+          {/* WHATSAPP: Added min-width and aspect ratio for consistency */}
+          <div className="flex items-center justify-center gap-4 text-lg md:text-xl text-slate-300 font-light">
+            <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 md:w-7 md:h-7 min-w-[24px] aspect-square" />
             <p>WhatsApp: <a href="https://wa.me/916238405728" target="_blank" rel="noreferrer" className="text-white font-medium hover:text-[#25D366] transition-colors">6238405728</a></p>
           </div>
           
-          {/* EMAIL */}
-          <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-slate-300 font-light">
-            <Mail className="text-[#ef4444] w-5 h-5 md:w-6 md:h-6" />
+          {/* EMAIL: Fixed scale and increased stroke weight to match solid icons */}
+          <div className="flex items-center justify-center gap-4 text-lg md:text-xl text-slate-300 font-light">
+            <Mail className="text-[#ef4444] w-6 h-6 md:w-7 md:h-7 min-w-[24px] stroke-[2.5]" />
             <p>
               Email:{" "}
               <a 
@@ -55,14 +52,14 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* SOCIAL ICONS: Reduced icon sizes and gap to match the new scale */}
-        <div className="flex justify-center gap-8 border-t border-white/5 pt-8">
+        {/* BOTTOM SOCIAL ICONS: Standardized for standard scaling */}
+        <div className="flex justify-center gap-8 border-t border-white/5 pt-10">
           <a href="https://github.com/sharonTkuriyakose" target="_blank" rel="noreferrer" className="group">
-            <Github className="w-8 h-8 md:w-10 md:h-10 text-slate-600 group-hover:text-white transition-all duration-300" />
+            <Github className="w-9 h-9 md:w-11 md:h-11 text-slate-600 group-hover:text-white transition-all duration-300" />
           </a>
           
           <a href="https://wa.me/916238405728" target="_blank" rel="noreferrer" className="group">
-            <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-110 transition-all duration-300" />
+            <img src={whatsappIcon} alt="WhatsApp" className="w-9 h-9 md:w-11 md:h-11 group-hover:scale-110 transition-all duration-300" />
           </a>
 
           <a 
@@ -71,7 +68,7 @@ export default function Contact() {
             rel="noopener noreferrer" 
             className="group"
           >
-            <Mail className="w-8 h-8 md:w-10 md:h-10 text-[#ef4444] group-hover:scale-110 transition-all duration-300" />
+            <Mail className="w-9 h-9 md:w-11 md:h-11 text-[#ef4444] stroke-[2] group-hover:scale-110 transition-all duration-300" />
           </a>
         </div>
       </motion.div>
