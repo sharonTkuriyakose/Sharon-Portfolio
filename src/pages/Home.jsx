@@ -26,8 +26,8 @@ export default function Home() {
             className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[5px] border-blue-600/50 overflow-hidden mb-6 shadow-[0_0_40px_rgba(37,99,235,0.15)]"
           >
             <img 
-              src="Sharon (2).jpeg" 
-              alt="Sharon Biju"
+              src="profile.jpeg" 
+              alt="Sharon T Kuriyakose"
               className="w-full h-full object-cover object-top scale-110" 
             />
           </motion.div>
