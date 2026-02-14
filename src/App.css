@@ -4,7 +4,9 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
-  background-color: #050505; /* Deep black theme */
+  background-color: #050505;
+  /* PREVENTS browser auto-scaling on high-res laptop screens */
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
@@ -15,30 +17,34 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* Prevents horizontal shifts on mobile */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: #050505;
 }
 
-/* 2. NAVBAR CLEARANCE 
-   Ensures content starts below your fixed navbar rather than behind it.
+/* 2. ROOT RESET 
+   Forces the React entry point to be full width without default Vite margins.
 */
+#root {
+  width: 100%;
+  max-width: none !important; 
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+/* 3. NAVBAR CLEARANCE */
 body {
   padding-top: 80px; 
 }
 
-#root {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* 3. RESPONSIVE GRID BACKGROUND */
+/* 4. RESPONSIVE GRID BACKGROUND */
 .grid-bg {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  /* 40px grid for mobile phones to prevent visual clutter */
   background-size: 40px 40px;
   background-image: 
     linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
@@ -47,12 +53,11 @@ body {
 
 @media (min-width: 768px) {
   .grid-bg {
-    /* 80px larger, cleaner grid for laptops */
     background-size: 80px 80px;
   }
 }
 
-/* 4. CONTENT BOX STYLING */
+/* 5. CONTENT BOX STYLING */
 .content-box {
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(12px);
@@ -61,18 +66,18 @@ body {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 5. RESPONSIVE TYPOGRAPHY & OVERLAP PREVENTION */
+/* 6. RESPONSIVE TYPOGRAPHY & OVERLAP PREVENTION */
 section {
   width: 100%;
-  /* Limits content width on ultra-wide laptops to fit standard "sides" */
-  max-width: 1400px;
+  max-width: 1440px; /* Aligns with standard laptop width */
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* Mobile specific fixes */
+/* Scaling Fixes for Mobile */
 @media (max-width: 480px) {
   h1 {
-    font-size: 2.5rem !important; /* Forces large headers to fit phone width */
+    font-size: 2.5rem !important; 
     line-height: 1.1;
   }
   
@@ -82,11 +87,11 @@ section {
   }
   
   body {
-    padding-top: 70px; /* Slightly smaller gap for mobile nav */
+    padding-top: 70px;
   }
 }
 
-/* 6. MARQUEE ANIMATION - Performance Optimized */
+/* 7. MARQUEE ANIMATION */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -96,7 +101,6 @@ section {
   display: flex;
   width: max-content;
   animation: marquee 40s linear infinite;
-  /* Using will-change tells the browser to use the GPU, removing lag */
   will-change: transform; 
 }
 
@@ -104,7 +108,7 @@ section {
   animation-play-state: paused;
 }
 
-/* 7. CUSTOM SCROLLBAR for a premium look */
+/* 8. CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
 }
