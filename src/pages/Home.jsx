@@ -50,8 +50,8 @@ export default function Home() {
             </p>
 
             <motion.a
-              href="/Sharon-CV.pdf"
-              download="Sharon-CV.pdf"
+              href="/Sharon_Res.pdf"
+              download="Sharon_Res.pdf"
               whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
               whileTap={{ scale: 0.95 }}
               className="px-7 py-3 md:px-9 md:py-4 bg-blue-600/10 border-2 border-blue-600 text-white text-sm font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.2)]"
