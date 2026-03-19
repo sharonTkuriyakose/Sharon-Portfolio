@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const myProjects = [
   { 
     title: "CyberSecure-Hub", 
-    desc: "A MERN stack platform for encrypted note storage and secure file monitoring.",
+    desc: "A Full stack platform for encrypted note storage and secure file monitoring.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000",
-    link: "https://your-live-link.com" 
+    link: "https://sharon-cyberhub.vercel.app/" 
   },
   { 
     title: "Resume Analyzer", 
