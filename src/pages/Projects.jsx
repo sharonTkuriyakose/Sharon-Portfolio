@@ -11,7 +11,7 @@ const myProjects = [
     title: "Resume Analyzer", 
     desc: "AI-powered tool detecting skill gaps and providing personalized learning roadmaps.",
     image: "https://www.shutterstock.com/image-photo/hr-professional-analyzing-digital-resume-260nw-2653317133.jpg",
-    link: "http://resume-analyzer-three-inky.vercel.app/"
+    link: "https://intell-path.vercel.app/"
   },
   { 
     title: "CivicFlow", 
